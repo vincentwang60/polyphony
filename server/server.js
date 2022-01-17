@@ -1,9 +1,5 @@
 /*
-|--------------------------------------------------------------------------
-| server.js -- The core of your server
-|--------------------------------------------------------------------------
-|
-| This file defines how your server starts up. Think of it as the main() of your server.
+| defines how your server starts up. Think of it as the main() of your server.
 | At a high level, this file does the following things:
 | - Connect to the database
 | - Sets up server middleware (i.e. addons that enable things like json parsing, user login)
@@ -33,9 +29,9 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "FILL ME IN";
+const mongoConnectionURL = "mongodb+srv://vkwang:4153v2166k00W!@cluster0.ji64e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 // TODO change database name to the name you chose
-const databaseName = "FILL ME IN";
+const databaseName = "Polyphony";
 
 // connect to mongodb
 mongoose
