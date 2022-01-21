@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.topContainer {
+    background-color: red;
+}
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.logo {
+    position: absolute;
+    width: 45px;
+    height: 62px;
+    left: 32px;
+    top: 65px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.logo-text {
+    position: absolute;
+    width: 201px;
+    height: 38px;
+    left: 93px;
+    top: 82px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.text {
+    position: absolute;
+    left: 259px;
+    top: 306px;
+    font-weight: 800;
+    font-size: 60px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.text-2 {
+    left: 630px;
+    color: #9D4B4B;
+}
+.text-3 {
+    left: 800px;
+    color: #227C9D;
+}
+.text-4 {
+    top: 386px;
+}
+.button-container {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #227C9D;
+    width: 300px;
+    height: 80px;
+    left: 259px;
+    top: 680px;
+    border-radius: 100px;
+    border: 4px solid #79C6E2;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button-text {
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 600;
+}
+.text-s {
+    width: 1000px;
+    font-size: 35px;
+    font-weight: 400;
+    top: 500px;
+}

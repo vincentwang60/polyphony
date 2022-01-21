@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    background-color: white;
+}
+.textContainer {
+    background-color: rebeccapurple;
+}
+.text {
+    color: white;
+    font-size: 100px;
+}

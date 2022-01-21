@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
-import Skeleton from "./pages/Skeleton.js";
+import Welcome from "./pages/Welcome.js";
+import Home from "./pages/Home.js";
+import NavBar from "./modules/NavBar.js"
 
 import "../utilities.css";
 
@@ -9,9 +11,6 @@ import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
 
-/**
- * Define the "App" component
- */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
 
@@ -19,6 +18,7 @@ const App = () => {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
+        console.log('logged in with user id', user._id)
         setUserId(user._id);
       }
     });
@@ -40,8 +40,10 @@ const App = () => {
 
   return (
     <>
+      <NavBar />
       <Router>
-        <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+        <Welcome path="/"/>
+        <Home path="/home" />
         <NotFound default />
       </Router>
     </>

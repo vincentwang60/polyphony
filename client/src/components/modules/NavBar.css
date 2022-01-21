@@ -1,0 +1,13 @@
+.NavBar-container {
+    background-color: var(--primary);
+    height: 42px;
+    flex: 1;
+    align-items: flex-end;
+  }
+  
+  .NavBar-bottomLine {
+    flex: 1;
+    justify-self: flex-end;
+    background-color: var(--grey);
+    height: 3px;
+  }
