@@ -1,11 +1,10 @@
-.container {
-    display: flex;
-    background-color: white;
+.home-container {
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
+    background-color: midnightblue;
 }
-.textContainer {
-    background-color: rebeccapurple;
-}
-.text {
-    color: white;
-    font-size: 100px;
+.home-background {
+    background-color: orange;
+    height: 95vh;
 }

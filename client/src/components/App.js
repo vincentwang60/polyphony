@@ -42,8 +42,8 @@ const App = () => {
     <>
       <NavBar />
       <Router>
-        <Welcome path="/"/>
-        <Home path="/home" />
+        <Welcome path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+        <Home path="/home" userId={userId}/>
         <NotFound default />
       </Router>
     </>

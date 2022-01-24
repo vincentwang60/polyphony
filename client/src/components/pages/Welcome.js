@@ -12,16 +12,12 @@ const GOOGLE_CLIENT_ID = "925980344728-79s8r1a4938de6j4kg2mrpitnh2ndtbs.apps.goo
 
 const Welcome = ({ userId, handleLogin, handleLogout }) => {
   const navigate = useNavigate();
-  const [signInSuccess, setSignInSuccess] = useState(false)
   console.log("entered welcome");
 
-  useEffect(()=>{
-    console.log('success changed to', signInSuccess)
-    if (signInSuccess) {
-      {handleLogin}
-      navigate('/home')
-    }
-  },[signInSuccess]);
+  const success = (res) => {
+    handleLogin(res)
+    navigate('/home')
+  }
 
   return (
     <>
@@ -44,7 +40,7 @@ const Welcome = ({ userId, handleLogin, handleLogout }) => {
             </div>
           )}
           buttonText="Login"
-          onSuccess={()=>{setSignInSuccess(true)}}
+          onSuccess={(res)=>{success(res)}}
           onFailure={(err) => console.log(err)}
         />
       </div>

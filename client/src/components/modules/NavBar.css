@@ -1,6 +1,6 @@
 .NavBar-container {
     background-color: var(--primary);
-    height: 42px;
+    height: 5vh;
     flex: 1;
     align-items: flex-end;
   }

@@ -28,9 +28,7 @@ const auth = require("./auth");
 const socketManager = require("./server-socket");
 
 // Server configuration below
-// TODO change connection URL after setting up your team database
 const mongoConnectionURL = "mongodb+srv://vkwang:a@Aa3Kn4jU7PG@A@cluster0.ji64e.mongodb.net/PolyPhony?retryWrites=true&w=majority"
-// TODO change database name to the name you chose
 const databaseName = "Polyphony";
 
 // connect to mongodb
