@@ -1,4 +1,11 @@
 .player-container {
-    background-color: magenta;
     width: 80vw;
+}
+.player-leftLine {
+    background-color: var(--grey);
+    width: 3px;
+    height: 100%;
+}
+.player-containerH {
+    width: 100%;
 }

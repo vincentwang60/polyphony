@@ -1,0 +1,17 @@
+.track-container {
+    height: 12%;
+}
+.track-selected {
+    height: 12%;
+    outline: 2px solid red;
+    outline-offset: -2px;
+}
+.track-text {
+    font-size: 20px;
+    color: white;
+}
+.track-line {
+    background-color: var(--grey);
+    height: 3px;
+    width: 100%;
+}

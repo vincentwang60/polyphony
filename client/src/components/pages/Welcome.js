@@ -12,11 +12,9 @@ const GOOGLE_CLIENT_ID = "925980344728-79s8r1a4938de6j4kg2mrpitnh2ndtbs.apps.goo
 
 const Welcome = ({ userId, handleLogin, handleLogout }) => {
   const navigate = useNavigate();
-  console.log("entered welcome");
 
   const success = (res) => {
-    handleLogin(res)
-    navigate('/home')
+    handleLogin(res).then(()=>{navigate('/home')})
   }
 
   return (

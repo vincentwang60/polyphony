@@ -18,6 +18,7 @@ function formatParams(params) {
     .join("&");
 }
 
+
 // convert a fetch result to a JSON object with error handling for fetch and json errors
 function convertToJSON(res) {
   if (!res.ok) {
@@ -35,6 +36,15 @@ function convertToJSON(res) {
     });
 }
 
+export function generateUID() {
+  // I generate the UID from two parts here 
+  // to ensure the random number provide enough bits.
+  var firstPart = (Math.random() * 46656) | 0;
+  var secondPart = (Math.random() * 46656) | 0;
+  firstPart = ("000" + firstPart.toString(36)).slice(-3);
+  secondPart = ("000" + secondPart.toString(36)).slice(-3);
+  return firstPart + secondPart;
+}
 // Helper code to make a get request. Default parameter of empty JSON Object for params.
 // Returns a Promise to a JSON Object.
 export function get(endpoint, params = {}) {

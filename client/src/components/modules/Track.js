@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 
-import "./Sidebar.css";
+import "./Track.css";
 
-class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Track = (props) => {
+  return (
+    <>
+      <div
+        className={"track-" + (props.highlight ? "selected" : "container")}
+        onClick={() => {
+          props.setShowPicker(true)
+          props.clickFunction(props.id);
+        }}
+      >
+        <div className="track-title-container">
+          <div className="track-text">{props.name}</div>
+          <div className="track-text">{props.type}</div>
+        </div>
+      </div>
+        <div className = "track-line"></div>
+    </>
+  );
+};
 
-  render() {
-    return (
-      <>
-        
-      </>
-    );
-  }
-}
-
-export default SideBar;
+export default Track;

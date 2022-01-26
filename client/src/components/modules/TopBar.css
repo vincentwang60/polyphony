@@ -1,0 +1,27 @@
+.topbar-container {
+    height: 12.2vh;
+    width: 100%;
+}
+.topbar-playerContainer {
+    height: 12vh;
+    width: 100%;
+}
+.topbar-timelineContainer {
+    height: 5vh;
+    width: 100%;
+    background-color: red;
+}
+.topbar-line {
+    justify-self: flex-end;
+    background-color: var(--grey);
+    height: 3px;
+}
+.topbar-buttonContainer {
+    justify-content: space-evenly;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+}
+.topbar-timeline {
+    width: 100%;
+}

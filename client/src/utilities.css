@@ -22,11 +22,19 @@
   --medgrey: #e0e0e0;
   --grey: #464152;
   --white: #fff;
+  --lightgrey: #928D9D;
+  --llgrey: #d4d2da;
 
   --xs: 4px;
   --s: 8px;
   --m: 16px;
   --l: 24px;
+
+  --pickerh: 40vh;
+  --boardh: 43vh;
+  --fullh: 83vh;
+  
+  --octaves: 10;
 }
 
 body {

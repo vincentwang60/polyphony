@@ -1,4 +1,23 @@
 .sidebar-container {
-    background-color: aquamarine;
+    background-color: #261D3D;
     width: 20vw;
+}
+.sidebar-logo-container {
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    background-color: var(--primary);
+}
+.sidebar-logo {
+    width: 15%;
+    margin: 5px;
+}
+.sidebar-logo-text {
+    width: 70%;
+    margin: 5px;
+    margin-top: 20px;
+}
+.sidebar-line {
+    background-color: var(--grey);
+    height: 3px;
 }

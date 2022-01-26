@@ -17,18 +17,16 @@ const App = () => {
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
-        // they are registed in the database, and currently logged in.
-        console.log('logged in with user id', user._id)
-        setUserId(user._id);
+        setUserId(user);
       }
     });
   }, []);
 
-  const handleLogin = (res) => {
+  const handleLogin = async(res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
-    post("/api/login", { token: userToken }).then((user) => {
-      setUserId(user._id);
+    await post("/api/login", { token: userToken }).then((user) => {
+      setUserId(user);
       post("/api/initsocket", { socketid: socket.id });
     });
   };

@@ -1,0 +1,6 @@
+.board-container {
+    height: var(--boardh);
+}
+.board-container-full {
+    height: 83vh;
+}

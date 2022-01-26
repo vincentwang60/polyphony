@@ -2,9 +2,11 @@
     flex-grow: 1;
     height: 100%;
     width: 100%;
-    background-color: midnightblue;
 }
 .home-background {
-    background-color: orange;
     height: 95vh;
+}
+.home-line {
+    width: 3px;
+    background-color: var(--grey);
 }
