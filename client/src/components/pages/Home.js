@@ -17,7 +17,6 @@ const Home = (props) => {
   const [firstLoad, setFirstLoad] = useState(true);
 
   const socketHelper = (newSong) => {
-    console.log('home socket updated', newSong)
     setSong(newSong);
   };
 
@@ -54,6 +53,7 @@ const Home = (props) => {
 
   //When song is changed, setup the screen
   useEffect(() => {
+    console.log('hs song changed!')
     if (song != -1 && song != undefined) {
       if (firstLoad) {
         socket.on(song.code, socketHelper);

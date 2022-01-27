@@ -23,7 +23,8 @@
 }
 .notepicker-label {
     color: black;
-    height: 6vh;
+    height: 1vh;
+    margin-top: 3.5vh;
     margin-left: -1.5vw;
     font-weight: 600;
     font-size: 14px;
@@ -43,6 +44,7 @@
     cursor: pointer;
     width: 80vw;
     height: 38vh;
+    margin-bottom: -1vh;
 }
 .notepicker-gridRowContainer {
     margin-left: -1.3vw;
@@ -70,7 +72,7 @@
     border-right: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
     width: 1.117vw;
-    height: 1.2vh;
+    height: 1.3vh;
     box-sizing: border-box;
     font-size: 6px;
 }
@@ -89,7 +91,7 @@
     width: 1.117vw;
     border-right: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
-    height: 1.2vh;
+    height: 1.3vh;
     box-sizing: border-box;
     opacity: 0.9;
     font-size: 6px;

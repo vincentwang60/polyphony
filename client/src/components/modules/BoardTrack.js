@@ -56,9 +56,7 @@ const BoardTrack = (props) => {
             body.start = timeFromString(left);
             body.end = timeFromString(left)+timeFromString(length);
           }
-          console.log("updating track with", body);
           post("api/updatetrack", body).then((res) => {
-            console.log("updated track to", res);
           });
         }}
         onMouseMove={(e) => {
@@ -113,7 +111,6 @@ const BoardTrack = (props) => {
             <div
               onMouseDown={(e) => {
                 setDragMain(true);
-                console.log('setting selected to', props.track._id)
                 props.setSelected(props.track._id)
                 props.setShowPicker(true)
               }}

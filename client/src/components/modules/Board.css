@@ -1,11 +1,26 @@
 .board-container {
     height: var(--boardh);
+    position: relative;
 }
 .board-container-full {
     height: 83vh;
+    position: relative;
 }
 .board-line {
     background-color: var(--grey);
     height: 3px;
     width: 100%;
+}
+.board-marker {
+    position:absolute;
+    width: 3px;
+    height: 100%;
+    background-color: white;
+}
+.board-marker-half {
+    top: 0px;
+    position:absolute;
+    width: 3px;
+    height: 40vh;
+    background-color: white;
 }

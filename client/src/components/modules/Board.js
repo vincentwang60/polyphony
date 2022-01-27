@@ -20,7 +20,7 @@ const Board = (props) => {
                   track={track}
                 />
               </div>
-              <div className="board-line"></div>
+              <div style={{ left: props.playerTime + "vw" }}className={"board-marker" + (props.showPicker ? "-half" : "")}></div>
             </>
           );
         })}

@@ -17,15 +17,15 @@ const NotePicker = (props) => {
     gridMap.push(i);
   }
   let gridMapHorizontal = [
-    [0, true],
-    [1, false],
-    [2, true],
-    [3, false],
+    [0, false],
+    [1, true],
+    [2, false],
+    [3, true],
     [4, true],
-    [5, true],
-    [6, false],
-    [7, true],
-    [8, false],
+    [5, false],
+    [6, true],
+    [7, false],
+    [8, true],
     [9, true],
     [10, false],
     [11, true],
@@ -54,14 +54,12 @@ const NotePicker = (props) => {
   };
 
   useEffect(() => {
-    console.log('selected changed')
     if (props.selected != undefined && props.selected != -1) {
       setTrack(getTrack(props.selected))
     }
   }, [props.selected]);
 
   useEffect(() => {
-    console.log('notepicker song changed',props.song)
     setTrack(getTrack(props.selected))
   },[props.song])
 
@@ -77,6 +75,7 @@ const NotePicker = (props) => {
   };
 
   if (props.showPicker && track != undefined && track != -1) {
+    console.log('props',props)
     return (
       <>
         <div className="notepicker-temp">Note picker for {props.selected}</div>
@@ -112,7 +111,7 @@ const NotePicker = (props) => {
                                     onClick={() => {
                                       handleClick(i, j, k);
                                     }}
-                                  >{k}|{83 - 12 * i - j[0]}</div>
+                                  />
                                 </div>
                               );
                             })}
@@ -135,4 +134,4 @@ const NotePicker = (props) => {
   return <></>;
 };
 
-export default NotePicker;
+export default React.memo(NotePicker);
