@@ -38,7 +38,6 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
       <Router>
         <Welcome path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Home path="/home" userId={userId}/>

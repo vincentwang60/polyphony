@@ -1,14 +1,20 @@
 .track-container {
     height: 12%;
 }
+.track-title-container {
+    justify-content: center;
+    align-items: center;
+}
 .track-selected {
     height: 12%;
     outline: 4px solid rgba(240,240,240,0.2);
     outline-offset: -2px;
 }
 .track-text {
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 800;
     color: white;
+    margin-top: 3vh;
 }
 .track-line {
     background-color: var(--grey);

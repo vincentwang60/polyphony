@@ -18,7 +18,7 @@ const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
   const addNewTrack = () => {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
     let tracksCopy = song.tracks.concat([
-      { name: "New Track", type: "Piano", color: "#" + randomColor, start: 16, end: 48 },
+      { name: "Track", type: "Piano", color: "#" + randomColor, start: 16, end: 48 },
     ]);
     const body = {
       creator_id: song.creator_id,
@@ -44,11 +44,12 @@ const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
           <img className="sidebar-logo-text" src={logoText} />
         </div>
         <div className="sidebar-line"></div>
-        {song.tracks.map((trackObj) => {
+        {song.tracks.map((trackObj, index) => {
           return (
             <Track
               key={trackObj._id.toString()}
               id={trackObj._id.toString()}
+              num={index}
               highlight={selected === trackObj._id.toString()}
               name={trackObj.name}
               type={trackObj.type}

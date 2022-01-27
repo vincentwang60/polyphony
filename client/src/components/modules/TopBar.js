@@ -6,14 +6,17 @@ import timeline from "../../public/timeline.png";
 import player from "../../public/player.png";
 
 const TopBar = (props) => {
-  const rulerMap = [1, 2, 3, 4, 5, 6, 7, 8];
+  const onMouseDown = (e) => {
+    props.setPlayerTime(1.25 * Math.round((4 / 5) * ((e.clientX * 100) / window.innerWidth) - 16))
+    props.setPlaying([])
+  }
   return (
     <>
       <div className="topbar-container u-flexColumn">
-        <div className="topbar-playerContainer">
+        <div className="topbar-playerContainer u-flex">
           <img src={player} className="topbar-player" style={{ left: props.playerTime + "vw" }} />
           <div className="topbar-buttonContainer u-flex">
-            <AiOutlineBackward size="5vh" color="white" />
+            <AiOutlineBackward onClick={()=>{props.setPlayerTime(0)}} size="5vh" color="white" />
             <AiFillPlayCircle
               onClick={() => {
                 props.setPlay(!props.play)
@@ -22,11 +25,11 @@ const TopBar = (props) => {
               color="#7C68CF"
             />
 
-            <AiOutlineForward size="5vh" color="white" />
+            <AiOutlineForward onClick={()=>{props.setPlayerTime(64*1.25)}}size="5vh" color="white" />
           </div>
         </div>
         <div className="topbar-timelineContainer u-flex">
-          <img src={timeline} className="topbar-timeline" />
+          <img onClick={onMouseDown} src={timeline} className="topbar-timeline" />
         </div>
         <div className="topbar-line"></div>
       </div>

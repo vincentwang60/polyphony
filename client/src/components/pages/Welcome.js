@@ -23,12 +23,12 @@ const Welcome = ({ userId, handleLogin, handleLogout }) => {
         <img className="image" src={bg} />
         <img className="logo" src={logo} />
         <img className="logo-text" src={logoText} />
-        <p className="text">Collaborative</p>
+        <p className="text">Painless</p>
         <p className="text text-2">music</p>
         <p className="text text-3">creation</p>
         <p className="text text-4">in minutes</p>
         <p className="text text-s">
-          Use our intuitive drag-and-drop system to create songs together and share with the world
+          Use our intuitive music creator to create and layer piano tracks
         </p>
         <GoogleLogin
           clientId={GOOGLE_CLIENT_ID}

@@ -6,6 +6,8 @@
     position: relative;
     height: 12vh;
     width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .topbar-timelineContainer {
     height: 5vh;

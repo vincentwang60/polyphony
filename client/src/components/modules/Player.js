@@ -22,6 +22,9 @@ const Player = (props) => {
         clearInterval(i);
       };
     }
+    else{
+      setPlaying([])
+    }
   }, [play]);
 
   useEffect(() => {
@@ -74,8 +77,7 @@ const Player = (props) => {
       <div className="player-container u-flex">
         <div className="player-leftLine" />
         <div className="player-containerH u-flexColumn">
-          <div style={{ color: "white", position: "absolute" }}>{playing.toString()}</div>
-          <TopBar play={play} setPlay={setPlay} playerTime={playerTime - 0.4} />
+          <TopBar setPlaying={setPlaying} setPlayerTime={setPlayerTime} play={play} setPlay={setPlay} playerTime={playerTime - 0.4} />
           <Board
             setSong={props.setSong}
             song={props.song}

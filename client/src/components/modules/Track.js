@@ -12,9 +12,8 @@ const Track = (props) => {
           props.clickFunction(props.id);
         }}
       >
-        <div className="track-title-container">
-          <div className="track-text">{props.name}</div>
-          <div className="track-text">{props.type}</div>
+        <div className="track-title-container u-flex">
+          <div className="track-text u-flex">{props.name} {props.num}</div>
         </div>
       </div>
         <div className = "track-line"></div>
