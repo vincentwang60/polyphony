@@ -9,7 +9,6 @@
 .topbar-timelineContainer {
     height: 5vh;
     width: 100%;
-    background-color: red;
 }
 .topbar-line {
     justify-self: flex-end;
@@ -23,5 +22,5 @@
     height: 100%;
 }
 .topbar-timeline {
-    width: 100%;
+    width: 80vw;
 }

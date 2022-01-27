@@ -64,7 +64,7 @@
     width: 1.117vw;
     height: 1.3vh;
     box-sizing: border-box;
-    font-size: 4px;
+    font-size: 6px;
 }
 .notepicker-gridCol-black {
     border-right: 1px solid var(--grey);
@@ -72,23 +72,25 @@
     width: 1.117vw;
     height: 1.2vh;
     box-sizing: border-box;
-    font-size: 4px;
+    font-size: 6px;
 }
 .notepicker-gridCol-special {
-    background-color: aqua;
+    background-color: var(--highlight);
     width: 1.117vw;
     height: 1.3vh;
     border-right: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
     box-sizing: border-box;
-    opacity: 0.5;
+    font-size: 6px;
+    opacity: 0.9;
 }
 .notepicker-gridCol-black-special {
-    background-color: aqua;
+    background-color: var(--highlight);
     width: 1.117vw;
     border-right: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
     height: 1.2vh;
     box-sizing: border-box;
-    opacity: 0.5;
+    opacity: 0.9;
+    font-size: 6px;
 }

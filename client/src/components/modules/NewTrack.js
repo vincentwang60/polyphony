@@ -5,7 +5,6 @@ import "./NewTrack.css";
 
 const NewTrack = (props) => {
   const handleClick = () => {
-    console.log('new track pressed', props)
     {props.addNewTrack()}
     {props.setShowPicker(true)}
   }

@@ -1,12 +1,26 @@
 .boardtrack-container {
-    height: 11.5vh;
+    position: relative;
+    height: 11.45vh;
 }
 .boardtrack-text {
     font-size: 20px;
     color: white;
 }
 .boardtrack-line {
-    background-color: var(--grey);
     height: 3px;
     width: 100%;
+}
+.boardtrack-note {
+    height: 0.136vh;
+    width: 1.25vw;
+    font-size: 3px;
+}
+.boardtrack-note-special {
+    height: 0.136vh;
+    width: 1.25vw;
+    font-size: 3px;
+    background-color: var(--highlight);
+    border-radius: 1vh;
+    opacity: 0.9;
+
 }

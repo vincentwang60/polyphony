@@ -10,7 +10,7 @@ const NotePicker = (props) => {
 
   let keyboardMap = [];
   let gridMap = [];
-  for (let i = -2; i < 9; i++) {
+  for (let i = 0; i < 7; i++) {
     keyboardMap.push(i);
   }
   for (let i = 0; i < 64; i++) {
@@ -31,46 +31,52 @@ const NotePicker = (props) => {
     [11, true],
   ];
 
+  const getTrack = (trackId) => {
+    for (let i=0; i < props.song.tracks.length; i++){
+      if (props.song.tracks[i]._id.toString() == trackId){
+        return props.song.tracks[i]
+      }
+    }
+    return -1
+  }
+
   const handleClick = (i, j, k) => {
     let time = k;
-    let note = 107 - 12 * i - j[0];
-    console.log("time", time, "note", note);
+    let note = 83 - 12 * i - j[0];
     const body = {
       _id:props.song._id,
       trackId: props.selected,
-      notes: [time, note],
+      notes: [time-track.start, note],
     };
-    post("api/updatetrack", body).then((updatedSong) => {
-      console.log("updated to", updatedSong);
-      get("/api/track", { _id: props.song._id, trackId: props.selected }).then((track) => {
-        console.log("got updated track", track);
-        setTrack(track[0]);
-      });
+    post("api/updatetrack", body).then((res) => {
+      setTrack(res)
     });
   };
 
   useEffect(() => {
+    console.log('selected changed')
     if (props.selected != undefined && props.selected != -1) {
-      console.log("notepicker getting with", props.song._id, props.selected);
-      get("/api/track", { _id: props.song._id, trackId: props.selected }).then((track) => {
-        console.log("got track", track);
-        setTrack(track[0]);
-      });
+      setTrack(getTrack(props.selected))
     }
   }, [props.selected]);
 
+  useEffect(() => {
+    console.log('notepicker song changed',props.song)
+    setTrack(getTrack(props.selected))
+  },[props.song])
+
   const inTrack = (i, j, k) => {
     let time = k;
-    let note = 107 - 12 * i - j[0];
+    let note = 83 - 12 * i - j[0];
     for (let n = 0; n < track.notes.length; n++) {
-      if (track.notes[n][0] == time && track.notes[n][1] == note) {
+      if (track.notes[n][0]+track.start == time && track.notes[n][1] == note) {
         return true;
       }
     }
     return false;
   };
 
-  if (props.showPicker && track != undefined) {
+  if (props.showPicker && track != undefined && track != -1) {
     return (
       <>
         <div className="notepicker-temp">Note picker for {props.selected}</div>
@@ -82,7 +88,7 @@ const NotePicker = (props) => {
                   <div className="u-flex">
                     <div className={"notepicker-octaveContainer u-flex"}>
                       <img className={"notepicker-keyboard"} src={Keyboard} />
-                      <div className={"notepicker-label"}>C{6 - i}</div>
+                      <div className={"notepicker-label"}>C{7 - i}</div>
                     </div>
                   </div>
                 );
@@ -106,7 +112,7 @@ const NotePicker = (props) => {
                                     onClick={() => {
                                       handleClick(i, j, k);
                                     }}
-                                  />
+                                  >{k}|{83 - 12 * i - j[0]}</div>
                                 </div>
                               );
                             })}
@@ -123,6 +129,8 @@ const NotePicker = (props) => {
         </div>
       </>
     );
+  }
+  else{
   }
   return <></>;
 };

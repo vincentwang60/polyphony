@@ -16,27 +16,25 @@ const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
   }, []);
 
   const addNewTrack = () => {
-    console.log("add new track to", song.tracks);
-    let tracksCopy = song.tracks.concat([{ name: "New Track", type: "Piano" }]);
-    console.log("tracksCopy", tracksCopy);
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    let tracksCopy = song.tracks.concat([
+      { name: "New Track", type: "Piano", color: "#" + randomColor, start: 16, end: 48 },
+    ]);
     const body = {
       creator_id: song.creator_id,
       tracks: tracksCopy,
     };
     post("/api/updatesong", body).then((updatedSong) => {
-      console.log("sidebar updated song", song, "to", updatedSong.song);
-      setSong(updatedSong.song);
+      setSong(updatedSong);
     });
   };
 
-  useEffect(()=>{
-    setLoading(false)
-  },[song])
+  useEffect(() => {
+    setLoading(false);
+  }, [song]);
 
-  if(loading){
-    return (
-      <div>Loading</div>
-    )
+  if (loading) {
+    return <div>Loading</div>;
   }
   return (
     <>
@@ -55,7 +53,7 @@ const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
               name={trackObj.name}
               type={trackObj.type}
               clickFunction={setSelected}
-              setShowPicker = {setShowPicker}
+              setShowPicker={setShowPicker}
               notes={trackObj.notes}
               creator_name={song.creator_name}
               creator_id={song.creator_id}

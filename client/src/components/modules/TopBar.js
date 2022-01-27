@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./TopBar.css";
 import { AiFillPlayCircle, AiOutlineBackward, AiOutlineForward } from "react-icons/ai";
 import timeline from "../../public/timeline.png"
+import player from "../../public/player.png"
 
 const TopBar = (props) => {
   const rulerMap = [1,2,3,4,5,6,7,8]

@@ -4,6 +4,9 @@ const TrackSchema = new mongoose.Schema({
   id: Number,
   name: String,
   type: String,
+  color: String,
+  start: Number,
+  end: Number,
   notes: [],
 });
 

@@ -4,3 +4,8 @@
 .board-container-full {
     height: 83vh;
 }
+.board-line {
+    background-color: var(--grey);
+    height: 3px;
+    width: 100%;
+}

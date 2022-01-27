@@ -67,18 +67,27 @@ router.post("/updatetrack", (req, res) => {
   let inTrack = false;
   Song.findById(req.body._id).then((song) => {
     track = song.tracks.id(req.body.trackId);
-    for (let i = 0; i < track.notes.length; i++) {
-      if (req.body.notes[0] == track.notes[i][0] && req.body.notes[1] == track.notes[i][1]) {
-        track.notes.splice(i, 1);
-        inTrack = true;
+    if (req.body.notes) {
+      for (let i = 0; i < track.notes.length; i++) {
+        if (req.body.notes[0] == track.notes[i][0] && req.body.notes[1] == track.notes[i][1]) {
+          track.notes.splice(i, 1);
+          inTrack = true;
+        }
+      }
+      if (!inTrack) {
+        track.notes.push(req.body.notes);
       }
     }
-    if (!inTrack) {
-      track.notes.push(req.body.notes);
+    if (req.body.start){
+      track.start = req.body.start
+    }
+    if (req.body.end) {
+      track.end = req.body.end
     }
     song.save();
-    socketManager.getIo().emit(song.code,song);
-  }); 
+    socketManager.getIo().emit(song.code, song);
+    res.send(track);
+  });
 });
 
 router.post("/updatesong", (req, res) => {
@@ -86,11 +95,11 @@ router.post("/updatesong", (req, res) => {
     { creator_id: req.body.creator_id },
     { tracks: req.body.tracks },
     { new: true }
-  ).then((song)=>{
+  ).then((song) => {
     song.save();
-    socketManager.getIo().emit(song.code,song);
-    res.send(song)
-  })
+    socketManager.getIo().emit(song.code, song);
+    res.send(song);
+  });
 });
 
 router.post("/song", (req, res) => {
@@ -99,6 +108,8 @@ router.post("/song", (req, res) => {
     creator_name: req.user.name,
     name: req.body.name,
     code: req.body.code,
+    start: req.body.start,
+    end: req.body.end,
     tracks: req.body.tracks,
   });
   newSong.save().then((song) => res.send(song));
