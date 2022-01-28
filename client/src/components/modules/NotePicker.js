@@ -75,10 +75,8 @@ const NotePicker = (props) => {
   };
 
   if (props.showPicker && track != undefined && track != -1) {
-    console.log('props',props)
     return (
       <>
-        <div className="notepicker-temp">Note picker for {props.selected}</div>
         <div className={"notepicker-container" + (props.showPicker ? "" : "-hidden")}>
           <div className="notepicker-main u-flex">
             <div className={"notepicker-keyboard-container u-flexColumn"}>

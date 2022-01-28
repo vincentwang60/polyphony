@@ -1,11 +1,11 @@
 .NavBar-container {
   background-color: var(--primary);
   height: 5vh;
-  justify-content: space-between;
-  align-items: stretch;
 }
 
 .NavBar-bottomLine {
+  position: absolute;
+  top: 4.7vh;
   background-color: var(--grey);
   width: 100%;
   height: 3px;
@@ -27,4 +27,26 @@
   font-size: 2.5vh;
   border-radius: 1vw;
   cursor: pointer;
+}
+.NavBar-linkedin {
+  color: var(--lightgrey);  
+  padding: 0.3vw;
+  cursor: pointer;
+}
+.NavBar-copied {
+  background-color: var(--grey);
+  padding: 0.5vw;
+  height: 2vh;
+  color: white;
+  border-radius: 2vw;
+}
+.NavBar-linksContainer {
+  align-items: center;
+  width: 100%;
+}
+.NavBar-help {
+  color: var(--lightgrey);  
+  padding: 0.3vw;
+  cursor: pointer;
+  margin-left: -2vw;
 }

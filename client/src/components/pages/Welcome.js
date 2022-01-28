@@ -10,10 +10,11 @@ import logoText from "../../public/logo-text.png";
 
 const GOOGLE_CLIENT_ID = "925980344728-79s8r1a4938de6j4kg2mrpitnh2ndtbs.apps.googleusercontent.com";
 
-const Welcome = ({ userId, handleLogin, handleLogout }) => {
+const Welcome = ({ userId, handleLogin, handleLogout, setShowHelp }) => {
   const navigate = useNavigate();
 
   const success = (res) => {
+    setShowHelp(true)
     handleLogin(res).then(()=>{navigate('/home')})
   }
 
@@ -28,7 +29,7 @@ const Welcome = ({ userId, handleLogin, handleLogout }) => {
         <p className="text text-3">creation</p>
         <p className="text text-4">in minutes</p>
         <p className="text text-s">
-          Use our intuitive music creator to create and layer piano tracks
+          Use the intuitive music creator to create and layer piano tracks
         </p>
         <GoogleLogin
           clientId={GOOGLE_CLIENT_ID}

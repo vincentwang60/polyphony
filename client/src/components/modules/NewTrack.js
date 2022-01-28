@@ -8,6 +8,7 @@ const NewTrack = (props) => {
     {props.addNewTrack()}
     {props.setShowPicker(true)}
   }
+  if (props.num < 4){
   return (
     <>
       <div className="newtrack-container u-flexColumn" onClick={handleClick}>
@@ -17,6 +18,8 @@ const NewTrack = (props) => {
       <div className="newtrack-line"></div>
     </>
   );
+  }
+  return (<></>)
 };
 
 export default NewTrack;

@@ -68,7 +68,6 @@ const BoardTrack = (props) => {
           if (dragRight) {
             let newRight =
               1.25 * Math.round((4 / 5) * ((e.clientX * 100) / window.innerWidth) - 16);
-            console.log("newRight", newRight);
             setRight(newRight.toString() + "vw");
             setLength(parseInt(newRight - left.substring(0, 2)).toString() + "vw");
           }

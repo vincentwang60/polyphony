@@ -7,7 +7,7 @@
 }
 .track-selected {
     height: 12%;
-    outline: 4px solid rgba(240,240,240,0.2);
+    outline: 4px solid var(--highlight);
     outline-offset: -2px;
 }
 .track-text {

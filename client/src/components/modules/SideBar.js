@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { post } from "../../utilities.js";
+import {useNavigate} from '@reach/router';
 
 import "./SideBar.css";
 import logo from "../../public/logo.png";
@@ -8,6 +9,7 @@ import NewTrack from "./NewTrack.js";
 import Track from "./Track.js";
 
 const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
+  const navigate = useNavigate();
   const [song, setSong] = useState(undefined);
   const [loading, setLoading] = useState(true);
 
@@ -40,8 +42,8 @@ const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
     <>
       <div className="sidebar-container">
         <div className="sidebar-logo-container u-flex">
-          <img className="sidebar-logo" src={logo} />
-          <img className="sidebar-logo-text" src={logoText} />
+          <img onClick = {()=>{navigate('/')}} className="sidebar-logo" src={logo} />
+          <img onClick = {()=>{navigate('/')}} className="sidebar-logo-text" src={logoText} />
         </div>
         <div className="sidebar-line"></div>
         {song.tracks.map((trackObj, index) => {
@@ -61,7 +63,7 @@ const SideBar = ({ selected, songProp, setSelected, setShowPicker }) => {
             />
           );
         })}
-        <NewTrack addNewTrack={addNewTrack} setShowPicker={setShowPicker} />
+        <NewTrack num={song.tracks.length} addNewTrack={addNewTrack} setShowPicker={setShowPicker} />
       </div>
     </>
   );

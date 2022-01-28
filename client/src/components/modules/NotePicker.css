@@ -30,10 +30,6 @@
     font-size: 14px;
     width: 5vw;
 }
-.notepicker-temp {
-    font-size: 5px;
-    color:white
-}
 .notepicker-main {
     overflow: auto;
 }

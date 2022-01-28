@@ -3,7 +3,8 @@ import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Welcome from "./pages/Welcome.js";
 import Home from "./pages/Home.js";
-import NavBar from "./modules/NavBar.js"
+import NavBar from "./modules/NavBar.js";
+import Help from "./modules/Help.js";
 
 import "../utilities.css";
 
@@ -13,6 +14,7 @@ import { get, post } from "../utilities";
 
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+  const [showHelp, setShowHelp] = useState(false);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -22,7 +24,7 @@ const App = () => {
     });
   }, []);
 
-  const handleLogin = async(res) => {
+  const handleLogin = async (res) => {
     console.log(`Logged in as ${res.profileObj.name}`);
     const userToken = res.tokenObj.id_token;
     await post("/api/login", { token: userToken }).then((user) => {
@@ -38,11 +40,13 @@ const App = () => {
 
   return (
     <>
+      <NavBar setShowHelp={setShowHelp}/>
       <Router>
-        <Welcome path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Home path="/home" userId={userId}/>
+        <Welcome setShowHelp={setShowHelp} path="/"handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+        <Home path="/home" userId={userId} />
         <NotFound default />
       </Router>
+      <Help setShowHelp={setShowHelp} show={showHelp} />
     </>
   );
 };

@@ -4,7 +4,6 @@ import { socket } from "../../client-socket.js";
 
 import SideBar from "../modules/SideBar.js";
 import Player from "../modules/Player.js";
-import NavBar from "../modules/NavBar.js"
 
 import "../../utilities.css";
 import "./Home.css";
@@ -16,7 +15,6 @@ const Home = (props) => {
   const [selected, setSelected] = useState(-1);
   const [showPicker, setShowPicker] = useState(false);
   const [firstLoad, setFirstLoad] = useState(true);
-
   const socketHelper = (newSong) => {
     setSong(newSong);
   };
@@ -54,7 +52,6 @@ const Home = (props) => {
 
   //When song is changed, setup the screen
   useEffect(() => {
-    console.log("hs song changed!");
     if (song != -1 && song != undefined) {
       if (firstLoad) {
         socket.on(song.code, socketHelper);
@@ -78,7 +75,6 @@ const Home = (props) => {
   }
   return (
     <>
-    <NavBar />
       <div className="home-background">
         <div className="home-container u-flex">
           <SideBar

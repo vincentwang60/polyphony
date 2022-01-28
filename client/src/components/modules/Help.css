@@ -1,0 +1,62 @@
+.help-container {
+  position: relative;
+  background-color: #232323;
+  border-radius: 1vh;
+  padding: 3vw;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  border: 0.5vh rgba(67, 67, 67, 0.5) solid;
+  max-width: 45vw;
+}
+.help-body {
+  padding-top: 2vh;
+  color: white;
+  font-size: 1vw;
+}
+.help-x {
+  position: relative;
+  color: var(--lightgrey);
+  margin-left: -2vw;
+  margin-top: 0.5vw;
+  cursor: pointer;
+}
+.help-all {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+.help-top {
+  font-size: 1.5vw;
+  color: white;
+  font-weight: 800;
+  position: absolute;
+  top: 1.7vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.help-line {
+  background-color: rgba(67, 67, 67, 0.5);
+  height: 3px;
+  width: calc(100% + 6.1vw);
+  margin-left: -3.05vw;
+  margin-top: 1vh;
+}
+.help-tabsContainer {
+  justify-content: space-between;
+}
+.help-tab {
+  color: white;
+  font-size: 1vw;
+  padding: 1vw;
+  font-weight: 600;
+  cursor: pointer;
+}
+.help-highlight {
+  background-color: var(--highlight);
+  height: 5px;
+  width: calc(4vw);
+  margin-left: 0vw;
+  margin-top: -4px;
+  top: 5vh;
+  border-radius: 3px;
+}

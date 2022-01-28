@@ -28,7 +28,7 @@ const Player = (props) => {
   }, [play]);
 
   useEffect(() => {
-    if (playerTime > 64) {
+    if (playerTime > 79) {
       setPlay(false);
     }
     if ((3 * playerTime) % 1 < 0.05) {
@@ -77,7 +77,7 @@ const Player = (props) => {
       <div className="player-container u-flex">
         <div className="player-leftLine" />
         <div className="player-containerH u-flexColumn">
-          <TopBar setPlaying={setPlaying} setPlayerTime={setPlayerTime} play={play} setPlay={setPlay} playerTime={playerTime - 0.4} />
+          <TopBar setPlaying={setPlaying}setPlayerTime={setPlayerTime} play={play} setPlay={setPlay} playerTime={playerTime - 0.4} />
           <Board
             setSong={props.setSong}
             song={props.song}

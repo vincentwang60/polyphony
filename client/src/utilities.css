@@ -18,7 +18,7 @@
 :root {
   --primary: #0F0326;
   --primary--dim: #6987db;
-  --darkgrey: #d4d4d4;
+  --darkgrey: #3e3e3e;
   --medgrey: #e0e0e0;
   --grey: #464152;
   --white: #fff;
@@ -31,8 +31,8 @@
   --m: 16px;
   --l: 24px;
 
-  --pickerh: 40vh;
-  --boardh: 43vh;
+  --pickerh: 30vh;
+  --boardh: 47vh;
   --fullh: 83vh;
   
   --octaves: 10;

@@ -21,6 +21,6 @@
     top: 0px;
     position:absolute;
     width: 3px;
-    height: 40vh;
+    height: var(--boardh);
     background-color: white;
 }
