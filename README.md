@@ -2,4 +2,4 @@
 
 ## About
 Log in with your google account to create and save piano songs!
-Made by Vincent Wang with React Native and MongoDB.
+Made by Vincent Wang with React and MongoDB.
