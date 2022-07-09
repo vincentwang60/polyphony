@@ -1,26 +1,31 @@
 .notepicker-container {
-    height: var(--pickerh); 
+    height: var(--pickerh);
     overflow: hidden;
     padding: 1vw;
     padding-right: 2vw;
     box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.5);
 }
+
 .notepicker-container-hidden {
     height: 0;
 }
+
 .notepicker-keyboard {
     height: 15vh;
     width: 7.5vw;
 }
+
 .notepicker-keyboard-container {
     height: 38vh;
     padding-right: 20px;
 }
+
 .notepicker-octaveContainer {
     align-items: center;
     justify-content: space-between;
     width: 5.8vw;
 }
+
 .notepicker-label {
     color: black;
     height: 1vh;
@@ -30,32 +35,39 @@
     font-size: 14px;
     width: 5vw;
 }
+
 .notepicker-main {
     overflow: auto;
 }
+
 .notepicker-main::-webkit-scrollbar {
     display: none;
 }
+
 .notepicker-gridContainer {
     cursor: pointer;
     width: 80vw;
     height: 38vh;
     margin-bottom: -1vh;
 }
+
 .notepicker-gridRowContainer {
     margin-left: -1.3vw;
     height: 15vh;
 }
+
 .notepicker-gridRow {
     background-color: var(--llgrey);
     height: 1.3vh;
     box-sizing: border-box;
 }
+
 .notepicker-gridRow-black {
     background-color: var(--lightgrey);
     height: 1.2vh;
     box-sizing: border-box;
 }
+
 .notepicker-gridCol {
     border-right: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
@@ -64,6 +76,7 @@
     box-sizing: border-box;
     font-size: 6px;
 }
+
 .notepicker-gridCol-black {
     border-right: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
@@ -72,6 +85,7 @@
     box-sizing: border-box;
     font-size: 6px;
 }
+
 .notepicker-gridCol-special {
     background-color: var(--highlight);
     width: 1.117vw;
@@ -82,6 +96,7 @@
     font-size: 6px;
     opacity: 0.9;
 }
+
 .notepicker-gridCol-black-special {
     background-color: var(--highlight);
     width: 1.117vw;
@@ -91,4 +106,12 @@
     box-sizing: border-box;
     opacity: 0.9;
     font-size: 6px;
+}
+
+.notepicker-close {
+    position: absolute;
+    font-size: 100;
+    left: 98.5%;
+    color: white;
+    cursor: pointer;
 }

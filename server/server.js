@@ -30,7 +30,7 @@ const auth = require("./auth");
 const socketManager = require("./server-socket");
 
 // Server configuration below
-const mongoConnectionURL = process.env.ATLAS_SRV
+const mongoConnectionURL = "mongodb+srv://vkwang:a@Aa3Kn4jU7PG@A@cluster0.ji64e.mongodb.net/PolyPhony?retryWrites=true&w=majority"
 const databaseName = "Polyphony";
 
 // connect to mongodb
@@ -53,7 +53,7 @@ app.use(express.json());
 // set up a session, which will persist login data across requests
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: "session-secret",
     resave: false,
     saveUninitialized: false,
   })

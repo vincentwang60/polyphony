@@ -51,6 +51,7 @@ const NotePicker = (props) => {
     post("api/updatetrack", body).then((res) => {
       setTrack(res)
     });
+    props.notePicked(note)
   };
 
   useEffect(() => {
@@ -122,6 +123,7 @@ const NotePicker = (props) => {
                 );
               })}
             </div>
+            <div onClick={()=>{props.setShowPicker(false)}} className="notepicker-close">X</div>
           </div>
         </div>
       </>
